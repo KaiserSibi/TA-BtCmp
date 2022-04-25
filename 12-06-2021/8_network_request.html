@@ -1,0 +1,39 @@
+<!--
+// Short exercise:
+// 1. Implement the `sleep` function.
+
+
+// async function main() {
+//   console.log('This program will sleep for 3 seconds...');
+//   await sleep(3000);
+//   console.log('Program resumed!');
+// }
+
+// main();
+-->
+
+<html>
+    <head>
+        <title>8_network_request Task</title>
+        <script>
+            async function main() {
+                // Alternatively:
+                // function sleep(ms) {
+                //   return new Promise(resolve => setTimeout(resolve, ms));
+                // }
+                console.log("Task 1: ");
+                const title = 'Mi nombre es Kaiser';
+                console.log("Before: Mi nombre es Kaiser")
+                await new Promise(z => setTimeout(z, 1000));
+                console.log("CrUnChInG.....");
+                const pipe = (...args) => args.reduce((a, b) => b(a));
+                const toUpperCase = (str) => str.toUpperCase();
+                const addHyphens = (str) => str.replace(/\s/g, '-');
+                const modifiedName = pipe(title, toUpperCase, addHyphens);
+                await new Promise(y => setTimeout(y, 2000));
+                console.log('After: ' + modifiedName);
+            }
+            main();
+        </script>
+    </head>
+</html>

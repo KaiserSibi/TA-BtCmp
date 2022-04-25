@@ -1,0 +1,41 @@
+<!--
+// Tasks:
+// 1. Create an arrow function that returns an area of a square (A = side^2)
+// 2. Assign an anonymous function that does nothing to a variable called noop.
+// 3. Declare a named function `countArgs` that returns the number of arguments it received.
+
+function addSeveralNumbers(...numbers) {
+  // Array.isArray(numbers); // true
+
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
+}
+--> 
+
+<html>
+    <head>
+        <title>4_functions Tasks</title>
+        <script>
+            areaOfASquare = a => a * a;
+            console.log('Task 1: ' + areaOfASquare(5));
+
+            noop = 'Anonymous User';
+            placeHolder = function (noop) {
+                console.log("Task 2: Hi!", noop);
+            };
+            placeHolder(noop);
+
+            function countArgs(...argumentsListish) {
+                let count = 0;
+                for (let val of argumentsListish) {
+                    count++;
+                }
+                console.log('Task 3: ' + count);
+            }
+            countArgs(1, 2, 3, 4, 5);
+        </script>
+    </head>
+</html>

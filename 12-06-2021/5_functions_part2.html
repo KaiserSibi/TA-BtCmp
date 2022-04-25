@@ -1,0 +1,48 @@
+<!-- 
+// Tasks:
+// 1. Implement the following functions square and computeAreaOfACircle:
+
+// const square;
+
+// square(2); // 4
+// square(3); // 9
+
+// // The area of a circle is pi times the radius squared (A = π r²).
+// const computeCircleArea;
+
+// computeCircleArea(10 /* radius */); // 314.1592653589793
+// computeCircleArea(20 /* radius */); // 1256.6370614359173
+
+2. Implement the `pipe` function such that it can accept any number of arguments (pipe operations). Each pipe operation should accept an input and must return an output that will 
+become the input to the next operation and so on. The last output will be the final result. The pipe's return value, which is a function, accepts an argument that 
+will served as the first input to the series of pipe operations.
+-->
+
+<html>
+    <head>
+        <title>5_functions_part2 Tasks</title>
+        <script>
+            Square = a => a * a; 
+            console.log("Task 1 - A: ");
+            console.log(Square(2));
+            console.log(Square(3));
+
+            console.log("Task 1 - B: ");
+            const pi = 3.14159;
+            Circle = a => pi * (a * a);
+            console.log(Circle(10));
+            console.log(Circle(20));
+
+            console.log("Task 2: ");
+            const pipe = (...args) => args.reduce((acc, el) => el(acc));
+
+            const title = 'Mi nombre es Kaiser';
+            const toUpperCase = (str) => str.toUpperCase();
+            const addHyphens = (str) => str.replace(/\s/g, '-');
+
+            const modifiedName = pipe(title, toUpperCase, addHyphens);
+
+            console.log('Before: Mi nombre es Kaiser \n After: ' + modifiedName);
+        </script>
+    </head>
+</html>
